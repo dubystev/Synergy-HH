@@ -131,7 +131,7 @@ public class TSHH extends HyperHeuristic {
      * Implements the beta distribution technique for sampling probabilities using two parameters alpha and beta
      * <p>
      * This Java implementation's ported from the C# implementation of Dr. James McCaffrey.
-     * For his explanation of the Thompson Sampling technique, visit https://msdn.microsoft.com/en-us/magazine/mt82974.aspx
+     * For his explanation of the Thompson Sampling technique, visit https://msdn.microsoft.com/en-us/magazine/mt829274.aspx
      * @param a parameter alpha
      * @param b parameter beta
      * @return sampled probability
