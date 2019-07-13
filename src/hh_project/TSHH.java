@@ -79,7 +79,7 @@ public class TSHH extends HyperHeuristic {
     }
     
     private void setup(ProblemDomain problem){
-        //initialize all variables initialized only once at the beginning of the optimization process
+        //initialize all variables
         int[] HPool_with_param; //a list of LLHs controlled by the use of parameters, a subset of HPool
 	HPool_LS = problem.getHeuristicsOfType(HeuristicType.LOCAL_SEARCH);
         K_ls = HPool_LS.length;
