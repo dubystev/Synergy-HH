@@ -1,7 +1,7 @@
 From command line, type
-java -jar hyper_heuristic_project <competing_algos> <problemDomain> <instance> <tally>
+java -jar hyper_heuristic_project.jar <competing_algos> <problemDomain> <instance> <tally> <execution_time>
 
-We define the following:
+The following are defined:
 <competing_algos> is a comma-separated list of integers which represents the algorithms that will be
 tested during the test-run
 <problemDomain> is a single integer value representing the domain to be tackled by the competing algorithms
@@ -9,5 +9,17 @@ SAT := 0, BP := 1, PS := 2, PFS := 3, TSP := 4, VRP := 5
 <instance> is an integer value that takes its value from the following set {1, 2, ..., 10} or {1, 2, ..., 11}
 <tally> is an integer representing the numer of loops, i.e. the number of times each algorithm in the competing
 algorithms set run on the set instance
+<execution_time> is a parameter that represents the time limit (in milliseconds) for each algorithm to run on YOUR machine
 
-An example run: java -jar hyper_heuristic_project.jar 1,2,5 4 8 3
+Note: Only three hyper-heuristics could be run with the jar file available in this repository, they include Adaptive Thompson Sampling (TSHH) of Alanazi (code available for download), Sequence-Based Hyper-heuristics (SSHH) of Kheiri and Keedwell and Fair-Share ILS (FS-ILS) of Steven Adriaensen. The first two (TSHH and SSHH) are my implementations and NOT my inventions. The last one was not implemented but the code can be downloaded from the author's github page: https://github.com/Steven-Adriaensen.
+
+Algorithms: {0 := SSHH, 1 := TSHH, 2 := FS-ILS}
+Domains: {0 := SAT, 1 := Bin Packing, 2 := Personnel Scheduling, 3 := Permutation Flowshop (PFS), 4 := TSP, 5 := VRP}
+
+An example run is given: java -jar hyper_heuristic_project.jar 0,1 4 8 3 600000
+Running the jar file like this means that SSHH and TSHH will be tested on Domain 4 (which represents TSP), Instance 8. The two algorithms will run three times each with a time limit of 600 seconds (10 minutes).
+
+To get the actual performance of each algorithm, the time limit you set must correspond to the speed of your machine which can be easily evaluated by running the program (via command line) provided on the CHeSC website -> http://www.asap.cs.nott.ac.uk/external/chesc2011/benchmarking.html
+
+
+ENJOY and feel free to contact me for any enquiries: stephenayodeji@gmail.com
