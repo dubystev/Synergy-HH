@@ -71,7 +71,7 @@ public class TSHH extends HyperHeuristic {
     char[] usesParam_pert;
     ArrayList<slidingW> SW; //the sliding window
     Acceptance_Mechanism accept;
-    final long execTime; //total execution time for the HH in milliseconds
+    final long execTime; //total execution time for the HH in seconds
     
     public TSHH(long seed, long time){
         super(seed);
