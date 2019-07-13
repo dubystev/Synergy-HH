@@ -1,0 +1,13 @@
+From command line, type
+java -jar hyper_heuristic_project <competing_algos> <problemDomain> <instance> <tally>
+
+We define the following:
+<competing_algos> is a comma-separated list of integers which represents the algorithms that will be
+tested during the test-run
+<problemDomain> is a single integer value representing the domain to be tackled by the competing algorithms
+SAT := 0, BP := 1, PS := 2, PFS := 3, TSP := 4, VRP := 5
+<instance> is an integer value that takes its value from the following set {1, 2, ..., 10} or {1, 2, ..., 11}
+<tally> is an integer representing the numer of loops, i.e. the number of times each algorithm in the competing
+algorithms set run on the set instance
+
+An example run: java -jar hyper_heuristic_project.jar 1,2,5 4 8 3
