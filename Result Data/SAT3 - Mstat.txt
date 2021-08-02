@@ -1,0 +1,36 @@
+Run #1: 2.0
+Run #2: 1.0
+Run #3: 2.0
+Run #4: 1.0
+Run #5: 2.0
+Run #6: 1.0
+Run #7: 1.0
+Run #8: 1.0
+Run #9: 2.0
+Run #10: 2.0
+Run #11: 3.0
+Run #12: 1.0
+Run #13: 1.0
+Run #14: 3.0
+Run #15: 1.0
+Run #16: 2.0
+Run #17: 2.0
+Run #18: 2.0
+Run #19: 0.0
+Run #20: 2.0
+Run #21: 1.0
+Run #22: 1.0
+Run #23: 3.0
+Run #24: 2.0
+Run #25: 1.0
+Run #26: 2.0
+Run #27: 2.0
+Run #28: 3.0
+Run #29: 3.0
+Run #30: 4.0
+Run #31: 3.0
+
+Median: 2.0
+Average: 1.8387096774193548
+Smallest value: 0.0
+Largest value: 4.0
