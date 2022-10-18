@@ -344,35 +344,13 @@ public class EA_ILS_final extends HyperHeuristic {
         wild_mut = 0;
     }
 
-    void mutation_0(int[] seq){
-        int loc = rng.nextInt(LEN);
-        if(rng.nextDouble() < 0.5){ //randomly select a LLH and fix it in a particular location
-            int h = rng.nextInt(pert_llh.length);
-            seq[loc] = h;
-        }
-    }
-
-    void mutation_1(int[] seq){
-        int loc = rng.nextInt(LEN);
-        if(loc == 0 && seq[1] != -1){
-            seq[0] = seq[1];
-            seq[1] = -1;
-        }
-        else if(loc == 0 && seq[1] == -1){
-            //replace with a random LLH
-            int h = rng.nextInt(pert_llh.length);
-            seq[loc] = h;
-        }
-        else
-            seq[loc] = -1;
-    }
-
     /**
      *
      * @param seq the selected operator sequence from the archive
      * @param seq_pos the position of the operator sequence in the archive, needed for the combination operators
+     * some mutation operators not used have been removed from the cleaned version of the code
      */
-    final int[] operators = {3};
+    final int[] operators = {1};
     int op_sum = operators.length;
     int op_; // the selected operator index during an iteration
     void apply_op(int[] seq){
@@ -384,15 +362,9 @@ public class EA_ILS_final extends HyperHeuristic {
                 mutation(seq);
                 break;
             case 1:
-                mutation_0(seq);
-                break;
-            case 2:
-                mutation_1(seq);
-                break;
-            case 3:
                 mutation_w(seq);
                 break;
-            case 4:
+            case 2:
                 //System.out.print(" Just used the Apply operator, i.e. no changes to the sequence ");
                 return; // do nothing to the current operation sequence
             default:
@@ -402,28 +374,12 @@ public class EA_ILS_final extends HyperHeuristic {
         }
     }
 
-    void add_to_archive(int[] seq){
-        archive.add(seq);
-        if (archive.size() > L)
-            archive.remove(0);
-    }
-
     void add_to_archive2(int[] seq, int iter){
         for(int i=0; i<iter; i++) {
             archive.add(seq);
             if (archive.size() > L)
                 archive.remove(0);
         }
-    }
-
-    public boolean Monte_Carlo(double eval, double eval_0){
-        if(eval < 1){
-            eval *= 10000;
-            eval_0 *= 10000;
-        }
-        double delta = -(eval - eval_0);
-        double rnd = rng.nextDouble();
-        return(rnd < Math.exp(delta));
     }
 
     int[] op_seq; //an operation sequence
@@ -447,7 +403,6 @@ public class EA_ILS_final extends HyperHeuristic {
     int no_imp_acm = 0;
     int imp_acm;
     double[] set = {0.38, 0.25, 0.15};
-    //double[] set = {0.50, 0.35, 0.2};
     BufferedWriter wr = null;
     int code;
     /**
@@ -564,9 +519,7 @@ public class EA_ILS_final extends HyperHeuristic {
                         imp_acm = 0;
                         no_imp_acm = 0;
                     }
-
-                    //boolean mc_acc = false;
-                    //if(!problem.compareSolutions(prop, cur) && MC_Accept(e_prop, e_cur)) mc_acc = true;
+                    
                     if (!problem.compareSolutions(prop, cur) && accept.accept(e_prop, e_cur, e_best, getElapsedTime())) {
                         updateParam();
                         if (e_prop < e_best) {
@@ -607,7 +560,6 @@ public class EA_ILS_final extends HyperHeuristic {
                 if(imp > 0){
                     output.add(String.format("{%d, %d} +%d ", temp_seq[0], temp_seq[1], imp));
                     add_to_archive2(temp_seq, imp); //add the sequence to the archive if a better solution is found
-                    //add_to_archive(temp_seq); //add the sequence to the archive if a better solution is found
                 }
                 param0 = param1 = param2 = param_b = -1;
             }
@@ -685,7 +637,6 @@ public class EA_ILS_final extends HyperHeuristic {
     }
 
     double[] add_mut = {0.1, 0.2, 0.3, 0.4, 0.5};
-    //double[] add_mut = {0.1, 0.2, 0.3};
     double linear_mutation(){
         double p1 = param_acm.get(rng.nextInt(param_acm.size()));
         double rand = add_mut[rng.nextInt(add_mut.length)];
