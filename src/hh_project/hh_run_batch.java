@@ -20,12 +20,12 @@ import java.util.Date;
 public class hh_run_batch {
     static long seed;
     static ProblemDomain problem;
-    static long t_allowed; //553000
+    static long t_allowed;
     static HyperHeuristic algo;
     static String domainName;
 
     public static void main(String[] args){
-        args = new String[]{"1", "5", "6", "31", "507000"};
+        args = new String[]{"1", "5", "6", "31", "530000"};
         if(args.length == 0 || args.length < 5){
             System.out.println("No argument was passed in or incomplete arguments set, program will exit...");
             System.exit(1);
