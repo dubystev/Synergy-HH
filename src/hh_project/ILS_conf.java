@@ -41,11 +41,12 @@ public class ILS_conf extends HyperHeuristic{
     int cur = 0, news = 1; //memory locations for current and new solutions
     double e_cur, e_news, e_best; //evaluations of the current, new and best solutions respectively
     long execTime;
-    final double[] param = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
+    final double[] param = {0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
     private Dictionary hType;
     private Dictionary hPos;
     private final int types = 2; //the number of heuristic types
-    private int[] pairings = {1, 2, 4, 5};
+    //set the pertubation configurations here. See paper referenced (Adubi et al., 2021) in ReadMe for more details
+    private int[] pairings = {1, 2, 4, 5}; //For example, use {4, 5} if you want single application of either mutation or ruin-recreate heuristics
     boolean isPaired; //to note if a pair of heuristic was applied
     ProblemDomain problem;
     Acceptance_Mechanism accept;
@@ -510,6 +511,13 @@ public class ILS_conf extends HyperHeuristic{
 
     @Override
     public String toString() {
-        return "hType-P {1,2,4,5}";
+        String ext = "";
+        for(int i=0; i<pairings.length; i++){
+            if(i == pairings.length - 1)
+                ext += pairings[i] + "";
+            else
+                ext += pairings[i] + ", ";
+        }
+        return String.format("hType-P {%s}", ext);
     }
 }
