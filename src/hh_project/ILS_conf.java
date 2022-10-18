@@ -1,4 +1,4 @@
-package hh_project;
+//package hh_project;
 
 import AbstractClasses.HyperHeuristic;
 import AbstractClasses.ProblemDomain;
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
+//Commonly referred to as TS-ILS in literature, see Adubi, S. A., Oladipupo, O. O., & Olugbara, O. O. (2021), CEC 2021
 public class ILS_conf extends HyperHeuristic{
     //heuristics
     int[] ls_llh;
