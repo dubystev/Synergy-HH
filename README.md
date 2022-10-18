@@ -10,10 +10,12 @@ ideas in TSHH and presented in IEEE Congress on Evolutionary Computation 2021 (h
 The source code for TS-ILS (#3) is named ILS_conf.java; https://github.com/dubystev/Synergy-HH/blob/master/src/hh_project/ILS_conf.java. The result files can be used as basis for comparing the algorithm's performance with other algorithms on the HyFlex test 
 suite (containing benchmark instances for six different combinatorial optimization problems).
 
+The source code for another algorithm from this project, EA-ILS (#4) is publicly available. The selection of perturbative heuristics is achieved via an evolutionary algorithm. Link for EA-ILS: https://github.com/dubystev/Synergy-HH/blob/master/src/hh_project/EA_ILS_final.java
+
 #1. Alanazi, F. (2016). Adaptive Thompson sampling for hyper-heuristics. In 2016 IEEE Symposium Series on Computational Intelligence (SSCI) (pp. 1-8). IEEE.
 
 #2. Adriaensen, S., Brys, T., & Nowé, A. (2014). Fair-share ILS: a simple state-of-the-art iterated local search hyperheuristic. In Proceedings of the 2014 annual conference on genetic and evolutionary computation (pp. 1303-1310).
 
 #3. Adubi, S. A., Oladipupo, O. O., & Olugbara, O. O. (2021). Configuring the Perturbation Operations of an Iterated Local Search Algorithm for Cross-domain Search: A Probabilistic Learning Approach. In 2021 IEEE Congress on Evolutionary Computation (CEC) (pp. 1372-1379). IEEE.
 
-#4. Adubi, S. A., Oladipupo, O. O., & Olugbara, O. O. (2021). Submitted to a Journal outlet, under review.
+#4. Adubi, S. A., Oladipupo, O. O., & Olugbara, O. O. (2022). Submitted to a Journal outlet, under review.
