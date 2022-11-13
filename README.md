@@ -18,4 +18,4 @@ The source code for another algorithm from this project, EA-ILS (#4) is publicly
 
 #3. Adubi, S. A., Oladipupo, O. O., & Olugbara, O. O. (2021). Configuring the Perturbation Operations of an Iterated Local Search Algorithm for Cross-domain Search: A Probabilistic Learning Approach. In 2021 IEEE Congress on Evolutionary Computation (CEC) (pp. 1372-1379). IEEE.
 
-#4. Adubi, S. A., Oladipupo, O. O., & Olugbara, O. O. (2022). Submitted to a Journal outlet, under review.
+#4. Adubi, S. A., Oladipupo, O. O., & Olugbara, O. O. (2022). Evolutionary Algorithm-Based Iterated Local Search Hyper-Heuristic for Combinatorial Optimization Problems. Algorithms, 15(11), 405.
